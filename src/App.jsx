@@ -106,11 +106,9 @@ function App() {
         },
         function (error) {
           if (error.code === error.PERMISSION_DENIED) {
-            // El usuario ha negado el acceso a la ubicación
             console.log("El usuario ha negado el acceso a la ubicación");
             getWeather("Helsinki").then((data) => changeWeather(data));
             getForecast("Helsinki").then((data) => changeForecast(data));
-            // Mantén la ubicación predeterminada
             setLoading(false);
           } else {
             console.log("Error al obtener la ubicación:", error.message);

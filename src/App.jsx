@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useEffect, useState } from "react";
 import { ArrowIcon, LocationIcon, SignalIcon } from "./components/Icons";
 import { Search } from "./components/Search";
@@ -55,6 +54,7 @@ function App() {
       locationName: name,
       windDeg: wind?.deg ?? 0,
     });
+
     const progreso = document.getElementById("progress");
     const windStatus = document.getElementById("windStatus");
     progreso.style.width = Math.round(main?.humidity ?? 0) + "%";
@@ -107,6 +107,7 @@ function App() {
               setLoading(false);
             })
             .catch(() => setLoading(false));
+            
           getForecastByCords(lat, lon).then((data) => changeForecast(data));
         },
         function (error) {
@@ -156,12 +157,12 @@ function App() {
   return (
     <Main>
       <WeatherCard
-       weatherData={weatherData}
-       isCelsius={isCelsius}
-       toggleToCelsius={toggleToCelsius}
-       toggleToFahrenheit={toggleToFahrenheit}
-       inputSearch={inputSearch}
-       cords={cords}
+        weatherData={weatherData}
+        isCelsius={isCelsius}
+        toggleToCelsius={toggleToCelsius}
+        toggleToFahrenheit={toggleToFahrenheit}
+        inputSearch={inputSearch}
+        cords={cords}
       />
       <section className="md:flex-1 md:ml-[613px] md:mr-[123px] md:mt-[42px]">
         <ForecastCard

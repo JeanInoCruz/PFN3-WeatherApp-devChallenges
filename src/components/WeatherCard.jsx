@@ -4,6 +4,7 @@ import { LocationIcon, SignalIcon } from "./Icons";
 
 
 const WeatherCard = ({ weatherData, inputSearch, cords, isCelsius }) => {
+    
   return (
     <section className="overflow-hidden md:fixed md:top-0 md:bottom-0 md:left-0 md:w-[459px] relative">
       <article className="bg-blue-1 h-screen">
